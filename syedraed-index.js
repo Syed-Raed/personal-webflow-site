@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.matchMedia('screen and (min-width: 991px)').matches) {
       emblaNode.style.height = 2*slideHeight + 10 + 'px' //fixed height for embla wrapper
     }
-    
+
+    anime.set('.work_title', { opacity: 1 })
+
     let t1 = anime.timeline({
       easing: 'easeInOutSine',
       duration: 750,
