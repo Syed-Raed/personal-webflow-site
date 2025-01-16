@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
       emblaNode.style.height = 2*slideHeight + 10 + 'px' //fixed height for embla wrapper
     }
 
-    anime.set('.work_title', { opacity: 1 })
-
     let t1 = anime.timeline({
       easing: 'easeInOutSine',
       duration: 750,
@@ -18,8 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const emblaApi = EmblaCarousel(viewportNode, OPTIONS, plugins)
       }
     })
-  
+    
     t1.add({
+      targets: '.work_title',
+      opacity: [0, 1],
+      duration: 100
+    })
+    .add({
       targets: '.svg-work path',
       strokeDashoffset: [anime.setDashoffset, 0],
       duration: 2000,
